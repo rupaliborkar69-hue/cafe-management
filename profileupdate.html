@@ -1,0 +1,29 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+        <h1>Profileupdate form</h1>
+        <form action="/profileupdate/{{data[0]}}" method="post">
+
+        <input type="text" name="fullname" value="{{data[1]}}" placeholder="ENTER FULL NAME" >
+        <br><br>
+        <input type="email" name="email" value="{{data[2]}}" placeholder="ENTER EMAIL">
+        <br><br>
+        <input type="tel" name="phone_number" value="{{data[3]}}"placeholder="ENTER PHONE NUMBER">
+        <br><br>
+        <input type="text" name="address" value="{{data[4]}}" placeholder="ENTER ADDRESS">
+        <br><br>
+        <input type="password" name="password" value="{{data[5]}}" placeholder="ENTER PASSWORD">
+        <br><br>
+        <input type="password" name="confirm_password" value="{{data[6]}}"  placeholder="ENTER_CONFRM PASSWORD">
+        <br><br>
+        <button type="submit">submit</button>
+        </form>
+    </body>
+    </html>

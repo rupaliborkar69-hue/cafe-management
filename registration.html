@@ -1,0 +1,28 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div class="container4">
+        <h1>Registration form</h1>
+        <form action="saveform" method="post">
+        <input type="text" name="fullname" placeholder="ENTER FULL NAME" required>
+        <br><br>
+        <input type="email" name="email" placeholder="ENTER EMAIL" required>
+        <br><br>
+        <input type="tel" name="phone_number" placeholder="ENTER PHONE NUMBER" required>
+        <br><br>
+        <input type="text" name="address" placeholder="ENTER ADDRESS" required>
+        <br><br>
+        <input type="password"name="password" placeholder="ENTER PASSWORD" required>
+        <br><br>
+        <input type="password" name="confirm_password" placeholder="ENTER_CONFRM PASSWORD" required>
+        <br><br>
+        <button type="submit">Register</button>
+        </form>
+    </body>
+    </html>

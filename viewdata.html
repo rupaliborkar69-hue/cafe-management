@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Customer data</h1>
+     <table border="1">
+        <tr>
+            <th>id</th>
+            <th>fullname</th>
+            <th>email</th>
+            <th>phone_number</th>
+            <th>address</th>
+            <th>password</th>
+            <th>confirm_password</th>
+            <th>Action</th>
+            <th>Action</th>
+            
+        </tr>
+        
+            {% for i in data %}
+            <tr>
+           
+            <td>{{i[0]}}</td>
+            <td>{{i[1]}}</td>
+            <td>{{i[2]}}</td>
+            <td>{{i[3]}}</td>
+            <td>{{i[4]}}</td>
+            <td>{{i[5]}}</td>
+            <td>{{i[6]}}</td>
+            <td><a href="/deletedata/{{i[0]}}" class="btn btn-danger">Delete</a></td>
+            <td><a href="/profileupdate/{{i[0]}}" class="btn btn-success">Update</a></td>
+
+           </tr>
+              {% endfor %} 
+         
+        
+    </table>
+    </div>
+</body>
+</html>

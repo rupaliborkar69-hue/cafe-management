@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill - Cafe Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        
+        <h1>📋 Your Bill</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td><strong>{{ item.name | capitalize }}</strong></td>
+                    <td>{{ item.qty }}</td>
+                    <td>₹ <strong>{{ item.cost }}</strong></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <h2>Total: ₹ {{ total }}</h2>
+        
+        <a href="/menu" class="btn">Back to Menu</a>
+        <!-- <a href="/index" class="btn">go to home</a> -->
+        <a href="{{ url_for('index') }}" class="btn">Home</a>
+    </div>
+</body>
+</html>

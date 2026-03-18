@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Cafe Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container2">
+         
+        
+        <h1>☕ Cafe Menu</h1>
+        
+        <form action="/bill" method="post">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item, price in menu.items() %}
+                    <tr>
+                        <td><strong>{{ item | capitalize }}</strong></td>
+                        <td>₹ <strong>{{ price }}</strong></td>
+                        <td>
+                            <input type="number" name="{{ item }}" value="0" min="0">
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button type="submit">Generate Bill</button>
+            <button type="submit"><a id="p2" href="{{url_for('index')}}">back</button></a>
+             <!-- <a id="p2" href="{{url_for('index')}}">Back</a> -->
+
+        </form>
+    </div>
+</body>
+</html>
+
